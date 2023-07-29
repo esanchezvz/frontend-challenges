@@ -1,0 +1,94 @@
+{
+  "root": true,
+  "globals": {
+    "React": true,
+    "JSX": true
+  },
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "airbnb-typescript",
+    "plugin:jest/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "jest",
+    "react",
+    "react-hooks",
+    "import",
+    "simple-import-sort",
+    "unused-imports",
+    "jsx-a11y"
+  ],
+  "rules": {
+    "max-len": [
+      "error",
+      110,
+      {
+        "ignoreTrailingComments": true,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignoreStrings": true,
+        "ignoreRegExpLiterals": true,
+        "ignoreTemplateLiterals": true
+      }
+    ],
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "no-unused-vars": "off",
+    "prefer-destructuring": "warn",
+    "no-nested-ternary": "off", // sometimes it is better
+    "default-case": "off", // Usually default case is not required
+    "camelcase": "off", // backend developers like _, no need to transform data all the time
+    "import/extensions": "off",
+
+    // typescript-eslint overrides
+    "@typescript-eslint/semi": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/comma-dangle": "off",
+    "@typescript-eslint/lines-between-class-members": "off",
+    "@typescript-eslint/indent": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/no-unused-expressions": "off",
+    "@typescript-eslint/no-redeclare": "off",
+
+    // unused imports plugin
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ],
+
+    // simple import sort plugin
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
+
+    // react overrides
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/jsx-no-bind": "off",
+    "react/no-danger": "error"
+  }
+}

@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx concurrently --kill-others-on-fail yarn:lint:check yarn:prettier:check yarn:typecheck yarn:test:coverage
