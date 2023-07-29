@@ -13,9 +13,9 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: 'Mid Level React Table',
-    id: 'mid-level-react-table',
-    link: '/mid-level-react-table',
+    title: 'React Mid Level Table',
+    id: 'react-mid-level-table',
+    link: '/react-mid-level-table',
     description:
       'Application that fetches some data and displays it in a tabular way, meeting specific rquirements.',
   },
@@ -24,11 +24,9 @@ const projects: Project[] = [
 const Root = () => {
   return (
     <main className="p-10 flex flex-col h-screen">
-      <div className="flex justify-center items-center">
-        <h1 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 mb-20">
-          React Challenges
-        </h1>
-      </div>
+      <h1 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 mb-20">
+        React Challenges
+      </h1>
 
       <ScrollArea className="grow w-full">
         <div className="container flex gap-3 flex-wrap justify-center">
