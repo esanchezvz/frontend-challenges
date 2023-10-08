@@ -10,6 +10,6 @@ const root = createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <StrictMode>
-    <RouterProvider router={mainRouter} />,
+    <RouterProvider router={mainRouter} />
   </StrictMode>,
 )
