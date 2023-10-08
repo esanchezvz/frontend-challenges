@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import { buttonVariants } from '@/ui/button'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/card'
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/ui/card'
 import { ScrollArea } from '@/ui/scroll-area'
 
 type Project = {
@@ -19,6 +19,12 @@ const projects: Project[] = [
     description:
       'Application that fetches some data and displays it in a tabular way, meeting specific rquirements.',
   },
+  {
+    title: 'React Transfer List',
+    id: 'transfer-list',
+    link: '/transfer-list',
+    description: 'A simple transfer list reusable components.',
+  },
 ]
 
 const Root = () => {
@@ -32,13 +38,12 @@ const Root = () => {
         <div className="container flex gap-3 flex-wrap justify-center">
           {projects.map((p, i) => {
             return (
-              <Card className="w-[30%]" key={p.id + i}>
+              <Card className="w-[30%] flex flex-col" key={p.id + i}>
                 <CardHeader>
                   <CardTitle>{p.title}</CardTitle>
                   <CardDescription>{p.description}</CardDescription>
                 </CardHeader>
-                <CardContent></CardContent>
-                <CardFooter className="flex justify-between">
+                <CardFooter className="flex justify-between mt-auto">
                   <Link to={p.link} className={buttonVariants({ className: 'w-full' })}>
                     Go to Project
                   </Link>
