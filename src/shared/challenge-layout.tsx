@@ -13,27 +13,25 @@ type ChallengeLayoutProps = {
 
 const ChallengeLayout = ({ requirements, solution, title }: ChallengeLayoutProps) => {
   return (
-    <main className="p-10 flex flex-col h-screen">
-      <div className="flex items-center justify-between px-6 border-b pb-2 mb-2">
+    <main className="flex px-5 flex-col h-screen">
+      <div className="flex items-center justify-between border-b py-3">
         <Link to="/" className={buttonVariants({ variant: 'ghost' })}>
           <ArrowLeftIcon className="h-4 w-4 mr-2" />
           Back
         </Link>
 
-        <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight transition-colors first:mt-0 mb-5">
-          {title}
-        </h1>
+        <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight transition-colors">{title}</h1>
 
         <div className="invisible" tabIndex={-1} />
       </div>
 
-      <Tabs defaultValue="solution" className="w-full h-full">
+      <Tabs defaultValue="solution" className="w-full pt-2">
         <TabsList className="grid grid-cols-2 w-[400px]">
           <TabsTrigger value="requirements">Requirements</TabsTrigger>
           <TabsTrigger value="solution">Solution</TabsTrigger>
         </TabsList>
 
-        <TabsContent value="requirements" className="h-full">
+        <TabsContent value="requirements">
           {requirements ? (
             requirements
           ) : (
@@ -43,9 +41,7 @@ const ChallengeLayout = ({ requirements, solution, title }: ChallengeLayoutProps
           )}
         </TabsContent>
 
-        <TabsContent value="solution" className="h-full">
-          {solution}
-        </TabsContent>
+        <TabsContent value="solution">{solution}</TabsContent>
       </Tabs>
     </main>
   )
