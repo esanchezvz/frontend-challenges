@@ -1,5 +1,7 @@
 import ChallengeLayout from '@/shared/challenge-layout'
 
+import TransferList from './components/transfer-list'
+
 const Requirements = () => {
   return (
     <div>
@@ -11,8 +13,19 @@ const Requirements = () => {
   )
 }
 
+const initialList = Array.from(Array(10).keys()).map((i) => ({
+  title: `List item ${i + 1}`,
+  id: Math.random().toString(16).slice(2),
+}))
+
 const ReactTransferList = () => {
-  return <ChallengeLayout title="React Transfer List" solution={null} requirements={<Requirements />} />
+  return (
+    <ChallengeLayout
+      title="React Transfer List"
+      solution={<TransferList list={initialList} />}
+      requirements={<Requirements />}
+    />
+  )
 }
 
 export default ReactTransferList
