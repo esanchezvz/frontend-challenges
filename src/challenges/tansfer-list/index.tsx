@@ -22,7 +22,11 @@ const ReactTransferList = () => {
   return (
     <ChallengeLayout
       title="React Transfer List"
-      solution={<TransferList list={initialList} />}
+      solution={
+        <div className="h-[60vh] w-[800px] mx-auto">
+          <TransferList list={initialList} />
+        </div>
+      }
       requirements={<Requirements />}
     />
   )
